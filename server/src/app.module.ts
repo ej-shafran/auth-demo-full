@@ -1,8 +1,10 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+
 import { TodoModule } from "./todo/todo.module";
 import { AuthModule } from './auth/auth.module';
+import config from './config';
 
 @Module({
   imports: [
@@ -10,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
     ConfigModule.forRoot({
       envFilePath: `.env.${process.env.NODE_ENV}`,
       isGlobal: true,
+      load: [config]
     }),
     TypeOrmModule.forRoot({
       type: "mysql",
