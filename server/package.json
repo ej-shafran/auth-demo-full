@@ -7,9 +7,9 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
+    "start": "export NODE_ENV=production && nest start",
+    "start:dev": "export NODE_ENV=development && nest start --watch",
+    "start:debug": "export NODE_ENV=debug && nest start --debug --watch",
     "start:prod": "node dist/main",
     "module": "nest g module && nest g controller && nest g service"
   },
