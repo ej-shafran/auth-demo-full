@@ -6,18 +6,21 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main"
+    "build": "export NODE_ENV=production && nest build",
+    "start": "export NODE_ENV=production && nest start",
+    "start:dev": "export NODE_ENV=development && nest start --watch",
+    "start:debug": "export NODE_ENV=debug && nest start --debug --watch",
+    "start:prod": "export NODE_ENV=production && node dist/main"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@nestjs/typeorm": "^9.0.1",
+    "mysql2": "^3.2.0",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "typeorm": "^0.3.12"
   },
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
