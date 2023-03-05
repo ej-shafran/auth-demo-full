@@ -25,7 +25,7 @@ import config from './config';
       logging: process.env.TYPEORM_LOGGING === 'on',
       synchronize: process.env.TYPEORM_SYNC === 'on',
 
-      entities: ["dist/**/*.entity{.ts,.js}"]
+      entities: ["dist/**/*.entity{.ts,.js}", "node_modules/**/*.entity{.ts,.js}"]
     }),
     AuthModule
   ],
