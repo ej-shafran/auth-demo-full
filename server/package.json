@@ -14,6 +14,7 @@
     "module": "nest g module && nest g controller && nest g service"
   },
   "dependencies": {
+    "@hilma/auth-nest": "^0.6.1",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
@@ -22,6 +23,7 @@
     "@nestjs/typeorm": "^9.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "cookie-parser": "^1.4.6",
     "mysql2": "^3.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
+    "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.13",
     "@types/node": "18.11.18",
     "source-map-support": "^0.5.20",

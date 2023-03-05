@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { TodoModule } from "./todo/todo.module";
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { TodoModule } from "./todo/todo.module";
       synchronize: process.env.TYPEORM_SYNC === 'on',
 
       entities: ["dist/**/*.entity{.ts,.js}"]
-    })
+    }),
+    AuthModule
   ],
   controllers: [],
   providers: [],
