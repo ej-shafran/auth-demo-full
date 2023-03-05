@@ -11,5 +11,7 @@ declare namespace NodeJS {
         TYPEORM_LOGGING: "on" | "off";
         TYPEORM_SYNC: "on" | "off";
         NEW_ADMINS: "on" | "off";
+
+        JWT_SECRET: string;
     }
 }

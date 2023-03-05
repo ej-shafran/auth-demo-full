@@ -1,5 +1,6 @@
-import { UserService } from "@hilma/auth-nest";
-import { Body, Controller, NotFoundException, Post } from "@nestjs/common";
+import { RequestUser, RequestUserType, UseLocalAuth, UserService } from "@hilma/auth-nest";
+import { Body, Controller, NotFoundException, Post, Res } from "@nestjs/common";
+import { Response } from "express";
 import { RegisterDTO } from "./auth.dto";
 
 const ROLES = Object.freeze({
@@ -29,5 +30,12 @@ export class AuthController {
       roles: Object.values(ROLES),
     });
     return id;
+  }
+
+  @UseLocalAuth()
+  @Post("login")
+  async login(@RequestUser() user: RequestUserType, @Res() res: Response) {
+    const body = this.userService.login(user, res);
+    return res.send(body);
   }
 }
